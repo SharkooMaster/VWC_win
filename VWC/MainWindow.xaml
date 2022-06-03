@@ -1,0 +1,42 @@
+﻿<Window x:Class="vwc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       
+        xmlns:tp="clr-namespace:vwc.components"
+        
+        xmlns:local="clr-namespace:vwc"
+        mc:Ignorable="d"
+        x:Name="mainWin"
+        Title="Dashboard" Height="595" Width="1058" WindowStyle="None" Background="#EFEFEF">
+    <Grid x:Name="Grid" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="Logo" Grid.Row="0" Source="/ui/Logo.png" VerticalAlignment="Center" Height="40" HorizontalAlignment="Left" Margin="20,0,0,10" />
+
+        <Image x:Name="MinimizeButton" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Source="/ui/MinimizeButton.png" Height="10" HorizontalAlignment="Right" Margin="0,0,60,0" />
+        
+        <WrapPanel x:Name="exit_wrap" Grid.Column="1" Grid.Row="0"
+                   HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="45"
+                   MouseDown="ExitButton_MouseDown">
+            <Image x:Name="ExitButton" Source="/ui/ExitButton.png" Margin="12,15,0,10" 
+                   VerticalAlignment="Center" Height="20" MouseDown="ExitButton_MouseDown" HorizontalAlignment="Center" />
+        </WrapPanel>
+
+        <!-- GRID.ROW::1 -->
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" Background="#EFEFEF" >
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Background="White" VerticalAlignment="Stretch" >
+            <tp:tp_inp title="New project name" placeholder="project name" Margin="15,20,0,0" HorizontalAlignment="Left"/>
+            <tp:tp_btn inner_content="Done" Margin="30,20,0,0" HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>
