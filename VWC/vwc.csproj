@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ui\Components_icon.png" />
     <None Remove="ui\ExitButton.png" />
+    <None Remove="ui\Explorer_icon.png" />
     <None Remove="ui\folder.png" />
     <None Remove="ui\htmlFile.png" />
     <None Remove="ui\Logo.png" />
@@ -21,7 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="ui\Components_icon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="ui\ExitButton.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ui\Explorer_icon.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="ui\folder.png">

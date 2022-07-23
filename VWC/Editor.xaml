@@ -4,9 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:vwc"
-        mc:Ignorable="d"
-        Title="Editor" Height="450" Width="800">
-    <Grid>
-        
+        mc:Ignorable="d" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Title="Editor" Height="1080" Width="1920">
+
+    <Grid Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="Logo" Grid.Row="0" Grid.Column="2" Source="/ui/Logo.png" VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Margin="20,0,0,10" />
+        <Image x:Name="MinimizeButton" Grid.Column="3" Grid.Row="0" VerticalAlignment="Center" Source="/ui/MinimizeButton.png" Height="10" HorizontalAlignment="Right" Margin="0,0,100,0" />
+        <WrapPanel x:Name="exit_wrap" Grid.Column="3" Grid.Row="0" Margin="0,0,30,0"
+                   HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="45"
+                   MouseDown="ExitButton_MouseDown">
+            <Image x:Name="ExitButton" Source="/ui/ExitButton.png" Margin="12,15,0,10" 
+                   VerticalAlignment="Center" Height="20" MouseDown="ExitButton_MouseDown" HorizontalAlignment="Center" />
+        </WrapPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFA800"/>
+                    <GradientStop Color="#FF0099FF" Offset="1"/>
+                    <GradientStop Color="#FFEB00FF" Offset="0.477"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Image Source="/ui/Explorer_icon.png" Margin="0,20,0,0" />
+            <Image Source="/ui/Components_icon.png" Margin="0,20,0,0" />
+        </StackPanel>
+
+        <WrapPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Grid.Column="2" Background="#FFF1F1F1">
+        </WrapPanel>
+
     </Grid>
 </Window>

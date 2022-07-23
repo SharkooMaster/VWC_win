@@ -23,5 +23,10 @@ namespace vwc
         {
             InitializeComponent();
         }
+
+        private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

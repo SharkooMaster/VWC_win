@@ -68,6 +68,10 @@ namespace vwc
                 Save.solutionName = projName_Input.getValue();
                 Save.solutionExtension= "vwc";
                 CreateSolution solution = new CreateSolution(projectPath, $"/{projName_Input.getValue()}", ".vwc");
+
+                Editor editorwin = new Editor();
+                editorwin.ShowDialog();
+                this.Close();
             }
         }
     }
