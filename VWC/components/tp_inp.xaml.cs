@@ -39,6 +39,10 @@ namespace vwc.components
             set { SetValue(placeholder_property, value); }
         }
 
+        public string getValue()
+        {
+            return valueBox.Text;
+        }
 
         public tp_inp()
         {

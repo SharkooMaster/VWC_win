@@ -13,6 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using htmlInterpreter;
+using htmlInterpreter.Debug;
+using htmlInterpreter.Caching;
+using htmlInterpreter.Components;
+using htmlInterpreter.Compiler.CPFM.Vanilla;
+
+using vwc.components;
+
 namespace vwc
 {
     /// <summary>
@@ -20,9 +28,17 @@ namespace vwc
     /// </summary>
     public partial class MainWindow : Window
     {
+        tp_inp projName_Input;
+        public string projectPath;
         public MainWindow()
         {
             InitializeComponent();
+
+            projName_Input = new tp_inp();
+            projName_Input.placeholder = "project name";
+            projName_Input.title = "New project name";
+            //topPanel.Children.Add(projName_Input);
+            topPanel.Children.Insert(0, projName_Input);
         }
 
         private void ExitButton_MouseDown(object sender, MouseButtonEventArgs e)
@@ -32,7 +48,27 @@ namespace vwc
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragMove();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        public void BrowseButton_Loaded()
+        {
+            tp_fileBrowser tp_FileBrowser = new tp_fileBrowser("C://");
+            tp_FileBrowser.ShowDialog();
+
+            if(tp_FileBrowser.isResult())
+            {
+                projectPath = tp_FileBrowser.getResult();
+                pathView.Text = $"path: {projectPath}";
+
+                Save.path = projectPath;
+                Save.solutionName = projName_Input.getValue();
+                Save.solutionExtension= "vwc";
+                CreateSolution solution = new CreateSolution(projectPath, $"/{projName_Input.getValue()}", ".vwc");
+            }
         }
     }
 }

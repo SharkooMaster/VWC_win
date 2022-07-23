@@ -9,7 +9,10 @@
         xmlns:local="clr-namespace:vwc"
         mc:Ignorable="d"
         x:Name="mainWin"
-        Title="Dashboard" Height="595" Width="1058" WindowStyle="None" Background="#EFEFEF">
+        Title="Dashboard" Height="595" Width="1058" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,1058,595" RadiusX="25" RadiusY="25"/>
+    </Window.Clip>
     <Grid x:Name="Grid" Background="White" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" MouseDown="Grid_MouseDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="50" />
@@ -34,9 +37,9 @@
         <!-- GRID.ROW::1 -->
         <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" Background="#EFEFEF" >
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1" Background="White" VerticalAlignment="Stretch" >
-            <tp:tp_inp title="New project name" placeholder="project name" Margin="15,20,0,0" HorizontalAlignment="Left"/>
-            <tp:tp_btn inner_content="Done" Margin="30,20,0,0" HorizontalAlignment="Center" />
+        <StackPanel x:Name="topPanel" Grid.Row="1" Grid.Column="1" Background="White" VerticalAlignment="Stretch" >
+            <tp:tp_btn x:Name="BrowseButton" inner_content="Done" Margin="30,20,0,0" HorizontalAlignment="Center" />
+            <TextBlock x:Name="pathView" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0" />
         </StackPanel>
     </Grid>
 </Window>

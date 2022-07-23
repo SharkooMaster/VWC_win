@@ -30,5 +30,11 @@ namespace vwc.components
         {
             InitializeComponent();
         }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = (MainWindow)Window.GetWindow(this);
+            window.BrowseButton_Loaded();
+        }
     }
 }

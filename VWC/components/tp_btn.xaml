@@ -6,7 +6,7 @@
              x:Name="root"
              mc:Ignorable="d">
     <Grid>
-        <Button x:Name="btn" Width="70" Height="30" BorderThickness="0" Background="#0099FF">
+        <Button x:Name="btn" Width="70" Height="30" BorderThickness="0" Background="#0099FF" Click="btn_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="8"/>

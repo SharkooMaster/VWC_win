@@ -9,18 +9,34 @@
 
   <ItemGroup>
     <None Remove="ui\ExitButton.png" />
+    <None Remove="ui\folder.png" />
+    <None Remove="ui\htmlFile.png" />
     <None Remove="ui\Logo.png" />
     <None Remove="ui\MinimizeButton.png" />
+    <None Remove="ui\newFolder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="htmlInterpreter" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="ui\ExitButton.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="ui\folder.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ui\htmlFile.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="ui\Logo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="ui\MinimizeButton.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="ui\newFolder.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
